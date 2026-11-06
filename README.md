@@ -2,6 +2,8 @@
 
 A single-file, light-blue portfolio built for SDE internship and entry-level applications.
 
+**Live site:** https://abhishekmagar2004-stack.github.io/portfolio/
+
 ## Files
 
 | File | Purpose |
@@ -24,9 +26,9 @@ Double-click `index.html` — no server or build step needed.
 
 ## Deploy (free, no build)
 
-- **Netlify** — drag the whole folder onto [app.netlify.com/drop](https://app.netlify.com/drop).
-- **GitHub Pages** — push the folder to a repository, then enable Pages for the `main` branch.
-- **Vercel** — import the folder as a static project.
+Already hosted on GitHub Pages at the live link above. To update it, commit a new `index.html` to `main` — Pages rebuilds automatically (about 1 minute).
+
+Alternative hosts: **Netlify** (drag the folder onto [app.netlify.com/drop](https://app.netlify.com/drop)) or **Vercel** (import the folder as a static project).
 
 ## What's included
 
