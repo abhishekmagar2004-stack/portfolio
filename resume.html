@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Abhishek Magar — Résumé</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+<style>
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Inter", Arial, sans-serif;
+    color: #1b2f4d;
+    background: #eef4ff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    font-size: 9.2pt;
+    line-height: 1.42;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 10mm 13mm 9mm;
+    background: #fff;
+    position: relative;
+  }
+  .sheet::before {
+    content: "";
+    position: absolute; top: 0; left: 0; right: 0; height: 5mm;
+    background: linear-gradient(90deg, #0b3b8c, #2563eb 55%, #06b6d4);
+  }
+  h1, h2, h3, p, ul { margin: 0; }
+  ul { padding-left: 0; list-style: none; }
+  a { color: inherit; text-decoration: none; }
+
+  .hdr {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 10mm;
+    padding-bottom: 4mm;
+    border-bottom: 1.5px solid #dbe7f7;
+  }
+  h1 {
+    font-family: "Sora", Arial, sans-serif;
+    font-size: 22pt;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    color: #08182f;
+    font-weight: 800;
+  }
+  h1 span { color: #2563eb; }
+  .role {
+    margin-top: 2.5mm;
+    font-family: "Sora", Arial, sans-serif;
+    font-size: 9.2pt;
+    font-weight: 600;
+    color: #0b3b8c;
+    letter-spacing: 0.015em;
+  }
+  .contact { text-align: right; font-size: 8.6pt; color: #566a86; line-height: 1.75; padding-top: 1.5mm; }
+  .contact b { color: #1b2f4d; font-weight: 600; }
+
+  .body {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 8mm;
+    padding-top: 4mm;
+  }
+
+  .sec { margin-bottom: 4mm; }
+  .sec:last-child { margin-bottom: 0; }
+  .sec-title {
+    display: flex; align-items: center; gap: 3mm;
+    font-family: "Sora", Arial, sans-serif;
+    font-size: 7.6pt;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #0b3b8c;
+    margin-bottom: 2mm;
+  }
+  .sec-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, #bfdbfe, transparent);
+  }
+
+  .summary { font-size: 8.8pt; color: #3f5675; line-height: 1.52; }
+  .summary b { color: #0b3b8c; font-weight: 600; }
+
+  .entry { margin-bottom: 2.8mm; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-head { display: flex; justify-content: space-between; gap: 4mm; align-items: baseline; }
+  .entry-title {
+    font-family: "Sora", Arial, sans-serif;
+    font-size: 9.1pt;
+    font-weight: 600;
+    color: #08182f;
+    letter-spacing: -0.01em;
+  }
+  .entry-sub { font-size: 8.1pt; color: #2563eb; font-weight: 500; margin-top: 0.4mm; }
+  .entry-date { font-size: 7.4pt; color: #5f7593; white-space: nowrap; font-weight: 500; }
+  .bullets { margin-top: 1.2mm; }
+  .bullets li {
+    position: relative;
+    padding-left: 3.4mm;
+    font-size: 8.3pt;
+    line-height: 1.42;
+    color: #465d7c;
+    margin-bottom: 0.6mm;
+  }
+  .bullets li:last-child { margin-bottom: 0; }
+  .bullets li::before {
+    content: "";
+    position: absolute; left: 0; top: 1.55mm;
+    width: 1.5mm; height: 1.5mm;
+    background: #2563eb;
+    border-radius: 0.3mm;
+    transform: rotate(45deg);
+  }
+  .bullets b { color: #1b2f4d; font-weight: 600; }
+
+  .side-card {
+    background: #f4f9ff;
+    border: 1px solid #e0ecfb;
+    border-radius: 2.8mm;
+    padding: 3mm;
+    margin-bottom: 3mm;
+  }
+  .side-card:last-child { margin-bottom: 0; }
+  .side-card .sec-title { margin-bottom: 1.8mm; }
+  .edu-degree { font-family: "Sora", Arial, sans-serif; font-size: 8.8pt; font-weight: 600; line-height: 1.35; color: #08182f; }
+  .edu-school { font-size: 8pt; color: #566a86; margin-top: 0.8mm; line-height: 1.4; }
+  .edu-meta { font-size: 7.8pt; color: #0b3b8c; font-weight: 600; margin-top: 1.6mm; }
+  .edu-meta span { display: block; margin-top: 0.5mm; color: #5f7593; font-weight: 500; }
+
+  .skill-group { margin-bottom: 1.9mm; }
+  .skill-group:last-child { margin-bottom: 0; }
+  .skill-group h4 {
+    margin: 0 0 0.7mm;
+    font-size: 7pt;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #64748b;
+    font-weight: 700;
+  }
+  .skill-group p { font-size: 7.8pt; color: #3f5675; line-height: 1.45; }
+
+  .cert-list li {
+    position: relative;
+    padding-left: 3.6mm;
+    font-size: 8.1pt;
+    color: #465d7c;
+    line-height: 1.4;
+    margin-bottom: 1.5mm;
+  }
+  .cert-list li:last-child { margin-bottom: 0; }
+  .cert-list li::before {
+    content: "✓";
+    position: absolute; left: 0; top: 0;
+    color: #0891b2;
+    font-size: 7.5pt;
+    font-weight: 700;
+  }
+  .cert-list span { display: block; color: #7b8ea6; font-size: 7.2pt; }
+
+  .foot {
+    position: absolute; left: 14mm; right: 14mm; bottom: 7mm;
+    display: flex; justify-content: space-between;
+    font-size: 7pt;
+    color: #7b8ea6;
+    border-top: 1px solid #e8f0fb;
+    padding-top: 2mm;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .sheet { margin: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header class="hdr">
+    <div>
+      <h1>Abhishek <span>Magar</span></h1>
+      <p class="role">Final-Year BE Computer Science Student · Full-Stack Developer</p>
+    </div>
+    <div class="contact">
+      <b>abhishekmagar2004@gmail.com</b><br />
+      github.com/abhishekmagar2004-stack<br />
+      linkedin.com/in/abhishek-magar-a6703035a
+    </div>
+  </header>
+
+  <div class="body">
+    <main>
+      <section class="sec">
+        <h2 class="sec-title">Summary</h2>
+        <p class="summary">
+          Final-year BE Computer Science student with hands-on experience shipping
+          <b>full-stack web apps</b>, AI-powered tools, and tested APIs. Comfortable across
+          React/TypeScript, Node/Express, Python/FastAPI, PostgreSQL, and Docker.
+          <b>450+ DSA problems</b> solved and a <b>7.0 CGPA</b>. Seeking an SDE internship or
+          entry-level role starting 2027.
+        </p>
+      </section>
+
+      <section class="sec">
+        <h2 class="sec-title">Experience</h2>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div>
+              <h3 class="entry-title">Software Engineering Intern</h3>
+              <p class="entry-sub">Nexbyte Systems · Remote</p>
+            </div>
+            <span class="entry-date">Jun — Aug 2026</span>
+          </div>
+          <ul class="bullets">
+            <li>Shipped <b>12 reusable React + TypeScript components</b> across three dashboards, cutting new-page build time by ~30%.</li>
+            <li>Rebuilt <b>8 REST endpoints</b> with Express and Zod validation, reducing 5xx responses by 45% in staging.</li>
+            <li>Added <b>60+ Jest tests</b> and a GitHub Actions pipeline, lifting coverage from 41% to 78%.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div>
+              <h3 class="entry-title">Open Source Contributor</h3>
+              <p class="entry-sub">GitHub · Remote</p>
+            </div>
+            <span class="entry-date">2025 — Present</span>
+          </div>
+          <ul class="bullets">
+            <li><b>14 merged PRs</b> across React and developer-tooling repos, focused on accessibility and documentation.</li>
+            <li>Fixed keyboard navigation in a component library used by <b>2k+ developers</b>.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div>
+              <h3 class="entry-title">Technical Lead — Coding Club</h3>
+              <p class="entry-sub">MSS's College of Engineering and Technology</p>
+            </div>
+            <span class="entry-date">2024 — Present</span>
+          </div>
+          <ul class="bullets">
+            <li>Mentored <b>40+ juniors</b> through a 10-week DSA roadmap and ran 12 hands-on workshops.</li>
+            <li>Organised a 24-hour hackathon with <b>120+ participants</b> and 18 shipped prototypes.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="sec">
+        <h2 class="sec-title">Selected Projects</h2>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div>
+              <h3 class="entry-title">CampusConnect — Campus operations hub</h3>
+              <p class="entry-sub">React · Node.js · Express · PostgreSQL · Prisma · JWT</p>
+            </div>
+            <span class="entry-date">2026</span>
+          </div>
+          <ul class="bullets">
+            <li>Events, lost-and-found, and notices platform with <b>1,200+ student accounts</b> and <b>p95 API latency of 180ms</b>.</li>
+            <li>Cut manual coordination work by <b>40%</b> and replaced fragmented WhatsApp workflows with role-based dashboards.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-head">
+            <div>
+              <h3 class="entry-title">ResumeIQ — ATS-aware résumé coach</h3>
+              <p class="entry-sub">Python · FastAPI · scikit-learn · spaCy · React · Docker</p>
+            </div>
+            <span class="entry-date">2026</span>
+          </div>
+          <ul class="bullets">
+            <li>TF-IDF + spaCy pipeline that scores role fit and suggests line-level fixes with <b>92% match precision</b>.</li>
+            <li>Processes <b>500 résumés in 12 seconds</b> across <b>18 ATS checks</b>, containerised for one-command deploys.</li>
+          </ul>
+        </div>
+
+      </section>
+    </main>
+
+    <aside>
+      <div class="side-card">
+        <h2 class="sec-title">Education</h2>
+        <h3 class="edu-degree">BE in Computer Science &amp; Engineering</h3>
+        <p class="edu-school">MSS's College of Engineering and Technology</p>
+        <p class="edu-meta">CGPA 7.0 / 10 <span>2023 — 2027 (expected) · Final year</span></p>
+      </div>
+
+      <div class="side-card">
+        <h2 class="sec-title">Technical Skills</h2>
+        <div class="skill-group">
+          <h4>Languages</h4>
+          <p>TypeScript, JavaScript, Python, Java, C++, C, SQL</p>
+        </div>
+        <div class="skill-group">
+          <h4>Frontend</h4>
+          <p>React, Next.js, Tailwind CSS, HTML5, CSS3, Framer Motion, Vite, ARIA</p>
+        </div>
+        <div class="skill-group">
+          <h4>Backend &amp; Data</h4>
+          <p>Node.js, Express, FastAPI, Flask, REST, JWT/OAuth, PostgreSQL, MongoDB, Redis, Prisma</p>
+        </div>
+        <div class="skill-group">
+          <h4>Tools &amp; DevOps</h4>
+          <p>Git, GitHub Actions, Docker, Linux, Postman, AWS (EC2/S3), Jest, Vitest, Vercel</p>
+        </div>
+        <div class="skill-group">
+          <h4>Fundamentals</h4>
+          <p>DSA, OOP, DBMS, Operating Systems, Computer Networks, System Design (foundational)</p>
+        </div>
+      </div>
+
+      <div class="side-card">
+        <h2 class="sec-title">Certifications</h2>
+        <ul class="cert-list">
+          <li>Meta Front-End Developer<span>Coursera</span></li>
+          <li>AWS Cloud Practitioner Essentials<span>AWS Skill Builder</span></li>
+          <li>Database Management Systems — Elite<span>NPTEL</span></li>
+          <li>API Fundamentals — Student Expert<span>Postman</span></li>
+          <li>Responsive Web Design<span>freeCodeCamp</span></li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+
+  <div class="foot">
+    <span>Abhishek Magar — Résumé</span>
+    <span>abhishekmagar2004@gmail.com</span>
+  </div>
+</div>
+</body>
+</html>
